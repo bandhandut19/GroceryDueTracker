@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    
+    scroll-behavior: smooth;
 }
 :root{
     --bg:rgb(26, 23, 23);
@@ -30,6 +30,7 @@ body{
     width: 80vw;
     border: .2rem solid red;
     border-radius: 1rem;
+    overflow-y: scroll;
 }
 .addBtn{
     position: relative;
@@ -60,9 +61,17 @@ h1{
     color: red;
 }
 .track{
+    display: flex;
+    flex-direction: column;
     position: relative;
-    top: 1rem;
+    margin-top: 1rem;
     color: green;
     font-style: italic;
     font-weight: bold;
+    overflow-y: scroll;
+}
+.para{
+    display: flex;
+    justify-content: space-around;
+    margin: .23rem;
 }

@@ -1,4 +1,5 @@
-let allDue = [];
+let inputArr = [];
+let outputArr = [];
 let showDue = [];
 let newDue = 0;
 let totalDue = 0;
@@ -13,34 +14,45 @@ addBtn.addEventListener('click', () => {
     addDue();
     allDue();
     displayingDue();
-    trackingDue();
-    singleDue.value='';
+    // trackingDue();
+    singleDue.value = '';
 })
 
 startNewBtn.addEventListener('click', () => {
-   totalDue = 0;
+    totalDue = 0;
+    track.innerHTML='';
+
 })
 
 const addDue = () => {
     let number = parseFloat(singleDue.value); /*  using parseFloat for stopping invalid inputs */
-    console.log(`The number is ${number}`)
-    totalDue+= number;
-    console.log(`The number is ${totalDue}`)
-    
+    const track = document.querySelector('.track')
+    inputArr.push(number);
+
+    inputArr.forEach(num => {
+        outputArr.push(num)
+        inputArr.pop(num)
+    })
+
+    outputArr.forEach(item => {
+        track.insertAdjacentHTML('afterbegin', `<p class="para"> Your Last Entered Due is ${item}</p>`)
+        outputArr.pop(item)
+    })
+    totalDue += number;
 
 }
 
-const displayingDue = ()=>{
+const displayingDue = () => {
     displayDue.innerText = `YOUR TOTAL DUE IS   > > >  ${totalDue} BDT`;
 }
 
-const trackingDue = () =>{
-    let date = new Date()
-    track.innerText=`Your Due Amount Enterted is > > > >_ [ ${singleDue.value} BDT ] & The Date is : ${date.toLocaleDateString()}`
-}
+// const trackingDue = () =>{
+//     let date = new Date()
+//     track.innerText=`Your Due Amount Enterted is > > > >_ [ ${singleDue.value} BDT ] & The Date is : ${date.toLocaleDateString()}`
+// }
 
-allDue = ()=>{
-    for(let i=0;i<allDue.length;i++){
+allDue = () => {
+    for (let i = 0; i < allDue.length; i++) {
         addDue[i] = singleDue.value;
     }
     // console.log(`items are ${addDue[2]}`)

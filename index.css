@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+}
+:root{
+    --bg:rgb(26, 23, 23);
+}
+
+body{
+    background: var(--bg);
+}
+
+.labels{
+    color: white;
+}
+.container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 5rem;
+    justify-self: center;
+    /* align-items: center; */
+    margin: auto;
+    padding: 5rem;
+    height: 80vh;
+    width: 80vw;
+    border: .2rem solid red;
+    border-radius: 1rem;
+}
+.addBtn{
+    position: relative;
+    top: .5rem;
+    width: 6rem;
+    height: 2rem;
+}
+input{
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 15rem;
+    height: 2rem; */
+    outline: none;
+    padding: .5rem;
+}
+.showTotalDue{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 2rem;
+    bottom: 4rem;
+    color: white;
+}
+h1{
+    margin-bottom: 1rem;
+}
+.dueBox {
+    color: red;
+}
+.track{
+    position: relative;
+    top: 1rem;
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+}

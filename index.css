@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -5,9 +6,15 @@
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
+    font-family: 'Righteous', cursive;
 }
 :root{
     --bg:rgb(26, 23, 23);
+    --label: rgba(230, 107, 230, 0.897);
+    --btn1: rgb(226, 97, 97);
+    --btn2: green;
+    --btn1Hover: rgb(104, 207, 104);
+    --btn2Hover: rgb(206, 7, 7);
 }
 
 body{
@@ -15,7 +22,9 @@ body{
 }
 
 .labels{
-    color: white;
+    position: relative;
+    bottom: 1rem;
+    color:var(--label);
 }
 .container{
     display: flex;
@@ -30,13 +39,28 @@ body{
     width: 80vw;
     border: .2rem solid red;
     border-radius: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .addBtn{
     position: relative;
     top: .5rem;
     width: 6rem;
     height: 2rem;
+    border: none;
+}
+#btn{
+    background-color:var(--btn2);
+}
+#btn:hover{
+    background-color: var(--btn1Hover);
+    font-size: 1rem;
+}
+#btn2:hover{
+    background-color: var(--btn2Hover);
+    font-size: 1rem;
+}
+#btn2{
+    background-color: var(--btn1);
 }
 input{
     display: flex;
@@ -52,12 +76,14 @@ input{
     position: relative;
     top: 2rem;
     bottom: 4rem;
-    color: white;
+    color: var(--label);
 }
 h1{
     margin-bottom: 1rem;
 }
 .dueBox {
+    display: flex;
+    flex-direction: column;
     color: red;
 }
 .track{
@@ -68,7 +94,7 @@ h1{
     color: green;
     font-style: italic;
     font-weight: bold;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .para{
     display: flex;

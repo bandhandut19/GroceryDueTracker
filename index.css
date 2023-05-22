@@ -29,17 +29,19 @@ body{
 .container{
     display: flex;
     position: relative;
+    flex-wrap: wrap;
     flex-direction: column;
     top: 5rem;
     justify-self: center;
     /* align-items: center; */
     margin: auto;
-    padding: 5rem;
+    padding: 3rem;
     height: 80vh;
-    width: 80vw;
+    width: 90vw;
     border: .2rem solid red;
     border-radius: 1rem;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .addBtn{
     position: relative;
@@ -60,7 +62,9 @@ body{
     font-size: 1rem;
 }
 #btn2{
+    margin-top: .5rem;
     background-color: var(--btn1);
+    width: 15rem;
 }
 input{
     display: flex;

@@ -25,31 +25,62 @@ startNewBtn.addEventListener('click', () => {
     displayDue.insertAdjacentHTML('beforeend', `<p class="para"> YOUR TOTAL DUE IS   > > >  ${totalDue} BDT </p>`)
     track.innerHTML = '';
     
+    
+
 })
 
 const addDue = () => {
+
     let number = parseFloat(singleDue.value); /*  using parseFloat for stopping invalid inputs */
     const track = document.querySelector('.track')
     inputArr.push(number);
-
     inputArr.forEach(num => {
         outputArr.push(num)
         inputArr.pop(num)
     })
-    
+
+
+    let copyOutput = [];
     outputArr.forEach(item => {
-        track.insertAdjacentHTML('afterbegin', `<p class="para"> Your Last Entered Due is ${item}</p>`)
-        outputArr.pop(item)
+        copyOutput.push(item)
     })
+
+    console.log(copyOutput)
+    let output = JSON.stringify(outputArr);
+    localStorage.setItem('output', output)
+
+    let mainOutput = localStorage.getItem('output')
+    let mainOutputParse = JSON.parse(mainOutput)
+
+    track.innerHTML = '';
+    mainOutputParse.forEach(item => {
+        track.insertAdjacentHTML('afterbegin', `<p class="para"> Your Last Entered Due is ${item}</p>`)
+        // localStorage.removeItem('output',item)
+    })
+
+
     totalDue += number;
 
 }
 
+(   function () {
+    const loadShow = document.querySelector('.loadShow')
+    
+    let savedArrString = localStorage.getItem('output')
+    let savedArr = JSON.parse(savedArrString)
+    savedArr.forEach(item=>{
+
+        loadShow.insertAdjacentHTML('beforeend', `<p class="para"> Your Last Entered Due is ${item}</p>`)
+    })
+
+})()
 const displayingDue = () => {
-    console.log(previousDue)
+
     displayDue.innerHTML = `<p class="para"> YOUR TOTAL DUE IS   > > >  ${totalDue} BDT</p>`
     // displayDue.insertAdjacentHTML('beforeend',`<p class="para"> YOUR TOTAL DUE IS   > > >  ${totalDue} BDT </p>`);
 }
+
+
 
 /*
 const trackingDue = () =>{

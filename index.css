@@ -77,8 +77,8 @@ input{
 .showTotalDue{
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 2rem;
+    position: absolute;
+    top: 12rem;
     bottom: 4rem;
     color: var(--label);
 }
@@ -95,10 +95,22 @@ h1{
     flex-direction: column;
     position: relative;
     margin-top: 1rem;
+    padding: .2rem;
     color: green;
     font-style: italic;
     font-weight: bold;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+}
+.loadShow{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 1rem;
+    padding: .2rem;
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+    overflow-y: scroll;
 }
 .para{
     display: flex;
